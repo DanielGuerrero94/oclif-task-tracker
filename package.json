@@ -1,0 +1,68 @@
+{
+  "name": "oclif-task-tracker",
+  "description": "Build a CLI app to track your tasks and manage your to-do list.",
+  "version": "0.0.0",
+  "author": "Daniel Guerrero",
+  "bin": {
+    "oclif-task-tracker": "./bin/run.js"
+  },
+  "bugs": "https://github.com/projects/oclif-task-tracker/issues",
+  "dependencies": {
+    "@oclif/core": "^4.0.33",
+    "@oclif/plugin-help": "^6.2.18",
+    "@oclif/plugin-plugins": "^5.4.17"
+  },
+  "devDependencies": {
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^4.1.2",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^18.19.64",
+    "chai": "^4.5.0",
+    "eslint": "^8.57.1",
+    "eslint-config-oclif": "^5.2.2",
+    "eslint-config-oclif-typescript": "^3.1.12",
+    "eslint-config-prettier": "^9.1.0",
+    "mocha": "^10.8.2",
+    "oclif": "^4.15.28",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/projects/oclif-task-tracker",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "oclif": {
+    "bin": "oclif-task-tracker",
+    "dirname": "oclif-task-tracker",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "projects/oclif-task-tracker",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "pnpm run lint",
+    "prepack": "oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "test.only": "mocha --forbid-only",
+    "version": "oclif readme && git add README.md",
+    "dev": "pnpm run build && ./bin/dev.js"
+  },
+  "types": "dist/index.d.ts"
+}

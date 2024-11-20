@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/commands/add.ts","./src/commands/delete.ts","./src/commands/list.ts","./src/commands/mark-done.ts","./src/commands/mark-in-progress.ts","./src/commands/update.ts","./src/lib/task-command.ts","./src/lib/tasks.ts","./src/utils/types.ts"],"version":"5.6.3"}
